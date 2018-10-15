@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import ViewContact from './ViewContact';
 
 class ViewContactManager extends Component {
-  state = {
-    contact_list:[]
-  };
-
   constructor(props, context) {
     super(props, context);
     // Binding "this" creates new function with explicitly defined "this"
@@ -18,8 +14,8 @@ class ViewContactManager extends Component {
     return (
       <div className="view-contact-section container">
         {
-          this.state.contact_list.map((item) => (
-            <ViewContact key={item.firstname} itemDetails={item}></ViewContact>
+          this.props.state.contact_list.map((item) => (
+            <ViewContact key={item.firstName} itemDetails={item}></ViewContact>
           ))
         }
       </div>

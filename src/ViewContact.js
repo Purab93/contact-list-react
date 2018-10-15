@@ -16,8 +16,10 @@ class ViewContact extends Component {
   render() {
     return (
       <div className="view-contact row">
-        <div className="contact-first-name">{this.props.itemDetails.firstname}</div>
-        <div className="contact-last-name">{this.props.itemDetails.lastname}</div>
+        <div className="contact-first-name table-col col-lg-2 col-md-2 col-sm-2 col-xs-12">{this.props.itemDetails.firstName}</div>
+        <div className="contact-last-name table-col col-lg-2 col-md-2 col-sm-2 col-xs-12">{this.props.itemDetails.lastName}</div>
+        <div className="contact-email table-col col-lg-4 col-md-4 col-sm-4 col-xs-12">{this.props.itemDetails.email}</div>
+        <div className="contact-mobile table-col col-lg-4 col-md-4 col-sm-4 col-xs-12">{this.props.itemDetails.mobile}</div>
       </div>
     );
   }
