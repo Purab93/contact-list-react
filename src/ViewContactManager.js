@@ -19,7 +19,7 @@ class ViewContactManager extends Component {
       <div className="view-contact-section container">
         {
           this.state.contact_list.map((item) => (
-            <ViewContact key={item.id} itemDetails={item}></ViewContact>
+            <ViewContact key={item.firstname} itemDetails={item}></ViewContact>
           ))
         }
       </div>

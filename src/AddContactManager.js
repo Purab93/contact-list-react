@@ -20,19 +20,20 @@ class AddContactManager extends Component {
   handler() {
     this.setState({
       contact_list: this.state.contact_list
-    })
+    });
+
+    this.props.handler();
+    this.state.counter++;
   }
 
   addContact (event) {
     // State change will cause component re-render
     
-    var tempArr = this.state.contact_list;
-    tempArr.push({id:this.state.counter});
-    this.setState({
-      contact_list:tempArr
-    });
-    this.props.handler();
-    this.state.counter++;
+    // var tempArr = this.state.contact_list;
+    // tempArr.push({id:this.state.counter});
+    // this.setState({
+    //   contact_list:tempArr
+    // });
   }
   render() {
     return (
