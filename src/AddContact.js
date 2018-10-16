@@ -80,13 +80,13 @@ class AddContact extends Component {
     }
 
     submitBtnClick (event) {
-        const { firstNameError, lastNameError, mobileError, emailError } = this.state;
-        if (!firstNameError && !lastNameError && !mobileError && !emailError){
+        const { firstName, lastName, mobile, email, firstNameError, lastNameError, mobileError, emailError } = this.state;
+        if ((firstName && lastName && mobile && email) && (!firstNameError && !lastNameError && !mobileError && !emailError)){
             var userDetails ={
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                mobile: this.state.mobile,
-                email: this.state.email
+                firstName: firstName,
+                lastName: lastName,
+                mobile: mobile,
+                email: email
             };
 
             this.state.contact_list.push(userDetails);
@@ -130,7 +130,7 @@ class AddContact extends Component {
                 </div>
                 <div className='row text-left'>
                     <div className='col-lg-4 col-md-4 col-sm-6'>   
-                        <button className="btn btn-primary submit" onClick={this.submitBtnClick}>Submit</button>
+                        <button className="btn btn-primary" onClick={this.submitBtnClick}>Submit</button>
                     </div>    
                 </div>
             </div>

@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <AddContactManager state={this.state} handler={this.handler}></AddContactManager>
-        <ViewContactManager state={this.state}></ViewContactManager>
+        {this.state.contact_list.length? <ViewContactManager state={this.state}></ViewContactManager>:''}
       </div>
     );
   }

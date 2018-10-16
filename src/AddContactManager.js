@@ -4,7 +4,8 @@ import AddContact from './AddContact';
 class AddContactManager extends Component {
   state = {
     contact_list:[],
-    counter:1
+    counter:1,
+    addContactClick: false
   };
 
   constructor(props, context) {
@@ -19,32 +20,27 @@ class AddContactManager extends Component {
 
   handler() {
     this.setState({
-      contact_list: this.state.contact_list
+      contact_list: this.state.contact_list,
+      counter: this.state.counter++,
+      addContactClick: false
     });
 
     this.props.handler();
-    this.state.counter++;
   }
 
   addContact (event) {
-    // State change will cause component re-render
-    
-    // var tempArr = this.state.contact_list;
-    // tempArr.push({id:this.state.counter});
-    // this.setState({
-    //   contact_list:tempArr
-    // });
+    this.setState({
+      addContactClick: true
+    });
   }
   render() {
     return (
       <div className="add-contact-section container">
+        
         <button className="add-contact-btn btn btn-primary" onClick={this.addContact}>Add Contact</button>
+        
         <div className="add-contact-container">
-          {
-            //this.state.contact_list.map((item) => (
-              <AddContact state={this.props.state} handler={this.handler}></AddContact>
-            //))
-          }
+            {this.state.addContactClick ? <AddContact state={this.props.state} handler={this.handler} />:''}
         </div>
       </div>
     );

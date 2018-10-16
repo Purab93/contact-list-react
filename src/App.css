@@ -24,6 +24,12 @@
 
 .table-col {
   border: 1px solid #000;
+  border-top: 0;
+}
+
+.table-header{
+  border: 1px solid #000;
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {

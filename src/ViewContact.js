@@ -16,10 +16,14 @@ class ViewContact extends Component {
   render() {
     return (
       <div className="view-contact row">
-        <div className="contact-first-name table-col col-lg-2 col-md-2 col-sm-2 col-xs-12">{this.props.itemDetails.firstName}</div>
-        <div className="contact-last-name table-col col-lg-2 col-md-2 col-sm-2 col-xs-12">{this.props.itemDetails.lastName}</div>
-        <div className="contact-email table-col col-lg-4 col-md-4 col-sm-4 col-xs-12">{this.props.itemDetails.email}</div>
-        <div className="contact-mobile table-col col-lg-4 col-md-4 col-sm-4 col-xs-12">{this.props.itemDetails.mobile}</div>
+        <div className="contact-name table-col col-lg-2 col-md-2 col-sm-2 col-xs-2">{this.props.itemDetails.firstName + this.props.itemDetails.lastName}</div>
+        <div className="contact-email table-col col-lg-4 col-md-4 col-sm-4 col-xs-4">{this.props.itemDetails.email}</div>
+        <div className="contact-mobile table-col col-lg-3 col-md-3 col-sm-3 col-xs-3">{this.props.itemDetails.mobile}</div>
+        <div className="contact-actions table-col col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          <div className="edit-action col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <button className="btn btn-primary">Edit</button>
+          </div>
+        </div>
       </div>
     );
   }
